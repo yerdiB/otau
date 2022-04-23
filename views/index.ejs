@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Bootstrap link-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!--Font Awesome link-->
+  <script src="https://kit.fontawesome.com/b01cc144d7.js" crossorigin="anonymous"></script>
+  <!--Jquery link-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!--Favicon-->
+  <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Otau</title>
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="/images/logo.svg" width="30" height="24" class="d-inline-block align-text-top">
+        OTAU
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/products">PRODUCTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contacts">CONTACTS</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<main>
+  <section>
+    <div class="container-fluid" style="display: flex; align-items: center; padding: 2rem; ">
+      <h4>
+        HALL'S CURTAIN
+      </h4>
+    </div>
+    <div class="container" style="padding-bottom: 2rem;">
+      <div class="row">
+        <div class="col-12 col-lg-4">
+          <div class="description">
+            <h1>
+              VELVET
+            </h1>
+            <p>
+              Velvet curtains and drapes are a classic look in any home. With our large range of cotton or synthetic velvet fabrics, you don't have to settle for choosing between beauty and practicality.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <img id="mainImage" src="./images/blueVelvet.jpg" alt="velvet" style=" width: 100%;">
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="properties row">
+            <div class="range col-12">
+              <label for="heights" class="form-label">SELECT HEIGHT</label>
+              <input class="form-range" type="range" id="height" name="height" min="250" max="350" list="heights" step="1">
+              <datalist id="heights">
+                <option value="250" label="250cm">250cm</option>
+                <option value="350" label="350cm">350cm</option>
+              </datalist>
+            </div>
+            <div class="range col-12">
+              <label for="widths" class="form-label">SELECT WIDTH</label>
+              <br>
+              <input class="form-range" type="range" id="width" name="width" min="2" max="10" list="widths" step="0.5">
+              <datalist id="widths">
+                <option value="2" label="2m">2m</option>
+                <option value="10" label="10m">10m</option>
+              </datalist>
+            </div>
+            <div class="colors col-12">
+              SELECT COLOR
+              <br>
+              <button onclick="selectColor()" class="dropbtn">Select</button>
+              <div id="myDropdown" class="dropdown-content">
+                <button onclick="changeToRed()" type="button" class="color" id="red">Red</button>
+                <button onclick="changeToBlack()" type="button" class="color" id="black">Black</button>
+                <button onclick="changeToBlue()" type="button" class="color" id="blue">Blue</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div style="display: flex;">
+            <a id="prev" class="link">
+              <i class="fas fa-long-arrow-alt-left"></i>
+              PREV
+            </a>
+            <br>
+            <br>
+            <a id="next" class="link">
+              NEXT
+              <i class="fas fa-long-arrow-alt-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-6" style="text-align: end; height: max-content;">
+          <div style="height: 100%; display: flex; justify-content: end;">
+            <a id="buy" class="link">
+              ADD TO CART — ₸14990
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="container-fluid">
+    <div class="row">
+      <div>
+        <div class="socials">
+          <h1>
+            <a href="/contacts">
+              Contacts
+            </a>
+          </h1>
+          <ul>
+            <li>
+              <a href="https://github.com/yerdiB" class="github">
+                <i class="fab fa-1x fa-github-square"> Github</i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/yerdaulet.ismanaliyev.7" class="facebook">
+                <i class="fab fa-1x fa-facebook-square"> Facebook</i>
+              </a>
+            </li>
+            <li>
+              <a href="https://mail.google.com/mail/?view=cm&source=mailto&to=yerdi.isman@gmail.com" class="gmail">
+                <i class="fas fa-1x fa-envelope-square"> Gmail</i>
+              </a>
+            </li>
+            <li>
+              <a href="https://telegram.im/@Yerdi_B" class="telegram">
+                <i class="fab fa-1x fa-telegram-plane"> Telegram</i>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/+77472768986" class="whatsapp">
+                <i class="fab fa-1x fa-whatsapp-square"> WhatsApp</i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/yerdib/" class="linkedin">
+                <i class="fab fa-1x fa-linkedin"> LinkedIn</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      Copyright <i class="far fa-copyright"></i>: 2022 by YerdiB
+    </div>
+  </div>
+</footer>
+<!--Bootstrap link-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="/javascripts/main.js"></script>
+</body>
+</html>
