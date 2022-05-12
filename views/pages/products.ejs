@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body>
+<header>
+    <%- include('../partials/header'); %>
+</header>
+<main>
+    <section>
+        <div style="float: right; cursor: pointer;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M96 0C107.5 0 117.4 8.19 119.6 19.51L121.1 32H541.8C562.1 32 578.3 52.25 572.6 72.66L518.6 264.7C514.7 278.5 502.1 288 487.8 288H170.7L179.9 336H488C501.3 336 512 346.7 512 360C512 373.3 501.3 384 488 384H159.1C148.5 384 138.6 375.8 136.4 364.5L76.14 48H24C10.75 48 0 37.25 0 24C0 10.75 10.75 0 24 0H96zM128 464C128 437.5 149.5 416 176 416C202.5 416 224 437.5 224 464C224 490.5 202.5 512 176 512C149.5 512 128 490.5 128 464zM512 464C512 490.5 490.5 512 464 512C437.5 512 416 490.5 416 464C416 437.5 437.5 416 464 416C490.5 416 512 437.5 512 464z"/></svg>
+            <span class="glyphicon glyphicon-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card">
+                        <img src="/images/bohoCurtain.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Boho</h5>
+                            <p class="card-text" id="boho"></p>
+                            <button class="my-cart-btn" data-id="1" data-name="product 1" data-summary="summary 1" data-price="3000" data-quantity="1" data-image="./images/bohoCurtain.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card">
+                        <img src="/images/buffaloCurtain.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Buffalo</h5>
+                            <p class="card-text" id="buffalo"></p>
+                            <button class="my-cart-btn" data-id="2" data-name="product 2" data-summary="summary 2" data-price="3500" data-quantity="1" data-image="./images/buffaloCurtain.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card">
+                        <img src="/images/cottonCurtain.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Cotton</h5>
+                            <p class="card-text" id="cotton"></p>
+                            <button class="my-cart-btn" data-id="3" data-name="product 3" data-summary="summary 3" data-price="2500" data-quantity="1" data-image="./images/cottonCurtain.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card">
+                        <img src="/images/lendaCurtain.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Lenda</h5>
+                            <p class="card-text" id="lenda"></p>
+                            <button class="my-cart-btn" data-id="4" data-name="product 4" data-summary="summary 4" data-price="2800" data-quantity="1" data-image="./images/lendaCurtain.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card">
+                        <img src="/images/linenCurtain.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Linen</h5>
+                            <p class="card-text" id="linen"></p>
+                            <button class="my-cart-btn" data-id="5" data-name="product 5" data-summary="summary 5" data-price="3800" data-quantity="1" data-image="./images/linenCurtain.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card">
+                        <img src="/images/luxuryCurtain.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Luxury</h5>
+                            <p class="card-text" id="luxury"></p>
+                            <button class="my-cart-btn" data-id="6" data-name="product 6" data-summary="summary 6" data-price="3300" data-quantity="1" data-image="./images/luxuryCurtain.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card">
+                        <img src="/images/siamCurtain.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Siam</h5>
+                            <p class="card-text" id="siam"></p>
+                            <button class="my-cart-btn" data-id="7" data-name="product 7" data-summary="summary 7" data-price="2200" data-quantity="1" data-image="./images/siamCurtain.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card">
+                        <img src="/images/windowCurtain.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Window</h5>
+                            <p class="card-text" id="window"></p>
+                            <button class="my-cart-btn" data-id="8" data-name="product 8" data-summary="summary 8" data-price="2300" data-quantity="1" data-image="./images/windowCurtain.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1>Comment</h1>
+            <div style="text-align: right;">
+                <input type="text" id="input" placeholder="write your text here...">
+                <button class="links" type="button" name="button" id="cancel">cancel</button>
+                <button class="links" type="button" name="button" id="comment">comment</button>
+                <div class="box-container">
+                    <div class="box">
+                    </div>
+                    <button class="links" type="button" name="button" id="delete">delete</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+<!--Bootstrap link-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="/javascripts/main.js"></script>
+<script src="/javascripts/jquery-2.2.3.min.js"></script>
+<script type='text/javascript' src="/javascripts/bootstrap.min.js"></script>
+<script type='text/javascript' src="/javascripts/jquery.mycart.js"></script>
+<script src="/javascripts/instagramfeed.js"></script>
+
+<script type="text/javascript">
+/*    $(document).ready(function(){
+        $(function () {
+            $(".my-cart-btn").myCart(options);
+        });
+        $('.box-container').slideUp();
+        $('#comment').click(function(){
+            var input = $('#input').val();
+            $('.box').append(input + "<br>");
+            $('#input').val('');
+            $('.box-container').slideDown();
+        });
+        $('#cancel').click(function(){
+            $('#input').val('');
+        });
+        $('#delete').click(function(){
+            $('.box').text('');
+            $('.box-container').slideUp();
+        });
+    })*/
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body>
+<header>
+  <%- include('../partials/header'); %>
+</header>
+<main>
+  <section>
+    <div class="container-fluid" style="display: flex; align-items: center; padding: 2rem; ">
+      <h4>
+        HALL'S CURTAIN
+      </h4>
+    </div>
+    <div class="container" style="padding-bottom: 2rem;">
+      <div class="row">
+        <div class="col-12 col-lg-4">
+          <div class="description">
+            <h1>
+              VELVET
+            </h1>
+            <p>
+              Velvet curtains and drapes are a classic look in any home. With our large range of cotton or synthetic velvet fabrics, you don't have to settle for choosing between beauty and practicality.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <img id="mainImage" src="./images/blueVelvet.jpg" alt="velvet" style=" width: 100%;">
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="properties row">
+            <div class="range col-12">
+              <label for="heights" class="form-label">SELECT HEIGHT</label>
+              <input class="form-range" type="range" id="height" name="height" min="250" max="350" list="heights" step="1">
+              <datalist id="heights">
+                <option value="250" label="250cm">250cm</option>
+                <option value="350" label="350cm">350cm</option>
+              </datalist>
+            </div>
+            <div class="range col-12">
+              <label for="widths" class="form-label">SELECT WIDTH</label>
+              <br>
+              <input class="form-range" type="range" id="width" name="width" min="2" max="10" list="widths" step="0.5">
+              <datalist id="widths">
+                <option value="2" label="2m">2m</option>
+                <option value="10" label="10m">10m</option>
+              </datalist>
+            </div>
+            <div class="colors col-12">
+              SELECT COLOR
+              <br>
+              <button onclick="selectColor()" class="dropbtn">Select</button>
+              <div id="myDropdown" class="dropdown-content">
+                <button onclick="changeToRed()" type="button" class="color" id="red">Red</button>
+                <button onclick="changeToBlack()" type="button" class="color" id="black">Black</button>
+                <button onclick="changeToBlue()" type="button" class="color" id="blue">Blue</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div style="display: flex;">
+            <a id="prev" class="link">
+              <i class="fas fa-long-arrow-alt-left"></i>
+              PREV
+            </a>
+            <br>
+            <br>
+            <a id="next" class="link">
+              NEXT
+              <i class="fas fa-long-arrow-alt-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-6" style="text-align: end; height: max-content;">
+          <div style="height: 100%; display: flex; justify-content: end;">
+            <a id="buy" class="link">
+              ADD TO CART — ₸14990
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+</body>
+</html>

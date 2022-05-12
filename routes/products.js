@@ -1,9 +1,6 @@
-const express = require('express');
+const express = require('express')
 const router = express.Router();
-
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-    res.render('products');
-});
-
-module.exports = router;
+router.get('/', (req,res) => {
+    res.render('pages/products')
+})
+module.exports = router

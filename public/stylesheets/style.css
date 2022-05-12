@@ -9,6 +9,15 @@ main{
 footer{
   background-color: #2B7A78;
 }
+p {
+  line-height: 1.4;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
 .socials{
   margin: 2rem;
   text-align: center;
