@@ -27,5 +27,21 @@
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^7.0.0"
-  }
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yerdiB/otau.git"
+  },
+  "author": "yerdi",
+  "engines": {
+    "node": "16.14.2"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yerdiB/otau/issues"
+  },
+  "homepage": "https://github.com/yerdiB/otau#readme",
+  "description": ""
 }
