@@ -17,8 +17,14 @@
                     <a class="nav-link" href="/contacts">CONTACTS</a>
                 </li>
             </ul>
-            <button class="btn"> <a href="/login">Log In</a> </button>
-            <button class="btn"> <a href="/signup">Sign Up</a> </button>
+            <% if (!isAuthenticated) { %>
+                <a href="/auth/login"><button class="btn"> Log In </button></a>
+                <a href="/auth/register"><button class="btn"> Sign Up </button></a>
+            <% } else { %>
+                <form action="/auth/logout" method="post">
+                    <button type="submit" class="btn">Logout <i class="fas fa-user"></i></button>
+                </form>
+            <% } %>
         </div>
     </div>
 </nav>

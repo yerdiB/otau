@@ -1,90 +1,55 @@
-const express = require('express');
-const session = require('express-session')
-const flash = require('connect-flash')
+require("dotenv").config();
+const express = require("express");
+const bodyParser = require("body-parser");
 const cors = require('cors');
-const path = require('path');
-const jwt = require('jsonwebtoken')
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const passport = require("passport");
-const LocalStrategy = require("passport-local");
-const passportLocalMongoose = require("passport-local-mongoose");
-
-const dbConfig = require('./config/database.config.js');
-const indexRouter = require('./routes/index');
-const productsRouter = require('./routes/products');
-const contactsRouter = require('./routes/contacts');
-const loginRouter = require('./routes/login');
-const signupRouter = require('./routes/signup');
+const mongoose = require("mongoose");
+const passport = require('passport');
+const session = require('express-session');
+const cookieParser = require("cookie-parser");
+const methodOverride = require("method-override");
+const path = require("path");
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 const app = express();
 
-app.set('secretKey', 'nodeRestApi');
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
+// app.use(cors());
+// app.use(require('morgan')('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.set('views', path.join(__dirname + '/views'));
 app.set('view engine', 'ejs');
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+app.use(methodOverride('_method'));
 
 
-mongoose.Promise = global.Promise;
-mongoose.connect(dbConfig.url, {
-    useNewUrlParser: true
-}).then(() => {
-    console.log("Database Connected Successfully!!");
-}).catch(err => {
-    console.log('Could not connect to the database', err);
-    process.exit();
-});
-
-app.use('/', indexRouter);
-app.use('/products', productsRouter);
-app.use('/contacts', contactsRouter);
-app.use('/login',loginRouter);
-app.use('/signup',signupRouter);
-
-function validateUser(req, res, next) {
-    jwt.verify(req.headers['x-access-token'], req.app.get('secretKey'), function(err, decoded) {
-        if (err) {
-            res.json({status:"error", message: err.message, data:null});
-        }else{
-            // add user id to request
-            req.body.userId = decoded.id;
-            next();
-        }
-    });
-
-}
-// Express session
-app.use(
-    session({
-        secret: 'secret',
-        resave: true,
-        saveUninitialized: true
-    })
-);
-
-// Passport middleware
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
 app.use(passport.initialize());
 app.use(passport.session());
-
-// Connect flash
-app.use(flash());
-
-// Global variables
-app.use(function(req, res, next) {
-    res.locals.success_msg = req.flash('success_msg');
-    res.locals.error_msg = req.flash('error_msg');
-    res.locals.error = req.flash('error');
+app.use((req, res, next) => {
+    res.locals.isAuthenticated = req.isAuthenticated() || req.session.isLoggedIn;
     next();
 });
+
+
+const keys = require("./config/keys");
+mongoose.Promise = global.Promise;
+mongoose.connect(keys.mongoURI)
+    .then(() => console.log("MongoDB connected successfully"))
+    .catch((err) => console.log("err"));
+
+
+app.use("/", require("./routes/index"));
+app.use("/products", require("./routes/products"));
+app.use("/contacts", require("./routes/contacts"));
+app.use("/auth", require("./routes/auth"));
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 module.exports = app;

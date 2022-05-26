@@ -216,3 +216,9 @@ button:hover{
   background-color: #FEFFFF;
   color: #17252A;
 }
+
+.btn{
+  color: white;
+  border: none;
+  background: none;
+}
