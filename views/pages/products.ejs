@@ -96,18 +96,28 @@
                     </div>
                 </div>
             </div>
-            <h1>Comment</h1>
-            <div style="text-align: right;">
-                <input type="text" id="input" placeholder="write your text here...">
-                <button class="links" type="button" name="button" id="cancel">cancel</button>
-                <button class="links" type="button" name="button" id="comment">comment</button>
-                <div class="box-container">
-                    <div class="box">
-                    </div>
-                    <button class="links" type="button" name="button" id="delete">delete</button>
-                </div>
-
+            <h1>Comments</h1>
+            <% if(Array.isArray(comment)){%>
+            <%for(var i=0; i < comment.length; i++){%>
+            <div class="col comment">
+                <div> Author: <%=comment[i].author%></div>
+                <div> Content: <%=comment[i].content%></div>
+                <div> Date: <%=comment[i].date%></div>
             </div>
+            <br>
+            <%}%>
+            <%}%>
+            <form action="/comment" method="post">
+                <div style="text-align: left;">
+                    <label style="color: #17252A">Author Name and Surname:</label>
+                    <input type="text" id="input" name="author" placeholder="Alex Bruno">
+                    <br>
+                    <label style="color: #17252A">Comment:</label>
+                    <input type="text" id="input" name="content" placeholder="write your comment here...">
+                    <br>
+                    <button class="links" type="submit" name="button" id="comment">Comment</button>
+                </div>
+            </form>
         </div>
     </section>
 </main>

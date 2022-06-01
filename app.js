@@ -48,6 +48,7 @@ mongoose.connect(keys.mongoURI)
 
 app.use("/", require("./routes/index"));
 app.use("/products", require("./routes/products"));
+app.use("/comment", require("./routes/comment"));
 app.use("/contacts", require("./routes/contacts"));
 app.use("/auth", require("./routes/auth"));
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));

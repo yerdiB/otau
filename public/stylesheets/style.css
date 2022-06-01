@@ -222,3 +222,8 @@ button:hover{
   border: none;
   background: none;
 }
+.comment{
+  color: white;
+  background: #17252A;
+  padding: 1em;
+}

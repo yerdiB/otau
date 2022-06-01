@@ -14,8 +14,6 @@ const requireAuth = (req, res, next) => {
                 next();
             }
         });
-    } else if (googleToken){
-        next();
     } else {
         res.redirect('/auth/login');
     }
